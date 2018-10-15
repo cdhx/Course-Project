@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>豆瓣排行搜索小能手</title>
+</head>
+<body>
+	<br>
+	<h1 style="text-align:center;">豆瓣排行搜索小能手</h1>
+	<form id="searchType" action="" method="get" style="text-align:center;">
+        <label>
+            <input type="radio" name="searchItem" value="1" checked>Book</label>
+        <label>
+            <input type="radio" name="searchItem" value="2">Movie</label>
+        <label>
+            <input type="radio" name="searchItem" value="3">Serial</label>
+    </form>
+	<form method="get" action='/logincheck' style="text-align:center;">
+        <label>关键词：<input type="text" name="keyword" value=""></label>
+        <input type="submit" value="搜索">
+    </form>
+    <script>
+        var oDemo = document.getElementById("searchType");
+        oDemo.addEventListener('click', function() {
+            var e = event || window.event;
+            if (e.target && e.target.nodeName.toUpperCase() == "INPUT") {
+                console.log(this);
+                console.log(e.target);
+                console.log(e.target.value);
+            }
+        }, false);
+    </script>
+</body>
+</html>
